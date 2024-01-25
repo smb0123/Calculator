@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  width: 31.25rem;
+  height: 43.75rem;
+  background-color: #D9D9D9;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.text {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: #FFF;
+  width: 25.625rem;
+  height: 6.25rem;
+  font-size: 3.125rem;
+}
+
+.button {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  gap: 0.625rem;
+}
+
+.button button {
+  background-color: #FFF;
+  width: 5.9375rem;
+  height: 5.9375rem;
+  font-size: 3.125rem;
+  cursor: pointer;
+}
