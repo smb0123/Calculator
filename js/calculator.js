@@ -16,11 +16,11 @@ for (let i of btn) {
 const display = document.querySelector('.text');
 const buttonWrapper = document.querySelector('.button');
 
-const keys = [
+const keyCodes = [
   13, 27, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 88, 189, 190, 191,
 ];
 
-const shiftKeys = [48, 53, 56, 57, 88, 187];
+const shiftKeyCodes = [48, 53, 56, 57, 88, 187];
 
 display.textContent = '';
 
@@ -31,8 +31,8 @@ function calculate(e) {
   const shiftKey = e.shiftKey;
 
   if (
-    (shiftKey && !shiftKeys.includes(keyCode)) ||
-    (!shiftKey && !keys.includes(keyCode))
+    (shiftKey && !shiftKeyCodes.includes(keyCode)) ||
+    (!shiftKey && !keyCodes.includes(keyCode))
   ) {
     return;
   }
