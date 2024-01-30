@@ -27,6 +27,8 @@ main {
   width: 25.625rem;
   height: 6.25rem;
   font-size: 3.125rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .button {
