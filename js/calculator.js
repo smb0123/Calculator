@@ -49,3 +49,17 @@ btnClick('.subtract', '-');
 btnClick('.plus', '+');
 btnClick('.point', '.');
 
+function clearDisplay() {
+  const displayText = document.querySelector('#displayText');
+  displayText.textContent = '';
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    clearDisplay();
+  }
+});
+
+document.querySelector('.reset').addEventListener('click', function() {
+  clearDisplay();
+});
