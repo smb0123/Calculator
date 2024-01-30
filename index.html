@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="./css/calculator.css" rel="stylesheet">
-</head>
-<body>
-  <main>
-    <div class="text">
-      111
-    </div>
-    <div class="button">
-      <button class="left-bracket">(</button>
-      <button class="right-bracket">)</button>
-      <button class="remain">%</button>
-      <button class="reset">AC</button>
-      <button class="seven">7</button>
-      <button class="eight">8</button>
-      <button class="nine">9</button>
-      <button class="divide">/</button>
-      <button class="four">4</button>
-      <button class="five">5</button>
-      <button class="six">6</button>
-      <button class="multiply">x</button>
-      <button class="one">1</button>
-      <button class="two">2</button>
-      <button class="three">3</button>
-      <button class="subtract">-</button>
-      <button class="one">0</button>
-      <button class="point">.</button>
-      <button class="equal">=</button>
-      <button class="plus">+</button>
-    </div>
-  </main>
-  <script src="./js/calculator.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./css/calculator.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div class="text"></div>
+      <div class="button">
+        <button class="left-bracket" data-key="(">(</button>
+        <button class="right-bracket" data-key=")">)</button>
+        <button class="remain" data-key="%">%</button>
+        <button class="reset" data-key="AC">AC</button>
+        <button class="seven" data-key="7">7</button>
+        <button class="eight" data-key="8">8</button>
+        <button class="nine" data-key="9">9</button>
+        <button class="divide" data-key="/">/</button>
+        <button class="four" data-key="4">4</button>
+        <button class="five" data-key="5">5</button>
+        <button class="six" data-key="6">6</button>
+        <button class="multiply" data-key="*">x</button>
+        <button class="one" data-key="1">1</button>
+        <button class="two" data-key="2">2</button>
+        <button class="three" data-key="3">3</button>
+        <button class="subtract" data-key="-">-</button>
+        <button class="one" data-key="0">0</button>
+        <button class="point" data-key=".">.</button>
+        <button class="equal" data-key="=">=</button>
+        <button class="plus" data-key="+">+</button>
+      </div>
+    </main>
+    <script type="module" src="./js/calculator.js"></script>
+  </body>
 </html>

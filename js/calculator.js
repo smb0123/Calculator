@@ -1,3 +1,5 @@
+import { keyCodes, shiftKeyCodes } from './constants.js';
+
 const btn = document.querySelector('.button').children;
 
 const changeColor = function (e) {
@@ -16,16 +18,11 @@ for (let i of btn) {
 const display = document.querySelector('.text');
 const buttonWrapper = document.querySelector('.button');
 
-const keyCodes = [
-  13, 27, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 88, 189, 190, 191,
-];
-
-const shiftKeyCodes = [48, 53, 56, 57, 88, 187];
-
 display.textContent = '';
 
-function calculate(e) {
-  console.log(e);
+function handleKeyup(e) {
+  console.log(e.key, ' ', e.keyCode);
+
   const key = e.key;
   const keyCode = e.keyCode;
   const shiftKey = e.shiftKey;
@@ -49,4 +46,7 @@ function calculate(e) {
   display.textContent += key;
 }
 
-document.addEventListener('keyup', calculate);
+function calculate(e) {}
+
+document.addEventListener('keyup', handleKeyup);
+buttonWrapper.addEventListener('click', calculate);
