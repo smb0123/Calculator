@@ -79,3 +79,22 @@ function calculateResult() {
     alert('잘못된 수식 입니다!');
   }
 }
+
+document.querySelector('.equal').addEventListener('click', calculateResult);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    calculateResult();
+  }
+});
+
+function evaluateExpression(expression) {
+  const sanitizedExpression = sanitizeExpression(expression);
+  return Function(`'use strict'; return (${sanitizedExpression})`)();
+}
+
+function sanitizeExpression(expression) {
+  const replacedExpressionWithMultiplication = expression.replace(/x/g, '*');
+  const sanitizedExpression = replacedExpressionWithMultiplication.replace(/[^0-9+\-*/().%]/g, '');
+  return sanitizedExpression;
+}
