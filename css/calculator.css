@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 main {
@@ -41,4 +42,28 @@ main {
   height: 5.9375rem;
   font-size: 3.125rem;
   cursor: pointer;
+}
+
+.mode {
+  width: 12.625rem;
+  height: 4.5625rem;
+  background-color: #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mode button {
+  width: 3.9375rem;
+  height: 1.9375rem;
+  cursor: pointer;
+}
+
+.mode button:nth-child(1) {
+  background-color: black;
+}
+
+.mode button:nth-child(2) {
+  background-color: white;
 }
