@@ -98,3 +98,15 @@ function sanitizeExpression(expression) {
   const sanitizedExpression = replacedExpressionWithMultiplication.replace(/[^0-9+\-*/().%]/g, '');
   return sanitizedExpression;
 }
+
+function updateWithPercent() {
+  const currentText = displayText.textContent;
+  const percentIndex = currentText.lastIndexOf('%');
+
+  if (percentIndex !== -1) {
+    const newText = currentText.substring(0, percentIndex) + ' / 100';
+    displayText.textContent = newText;
+    updateFontSize(newText);
+    calculateResult();
+  }
+}
