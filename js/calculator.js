@@ -61,3 +61,21 @@ document.addEventListener('keydown', function (event) {
     clearDisplay();
   }
 });
+
+function calculateResult() {
+  const expression = displayText.textContent;
+
+  try {
+    const result = evaluateExpression(expression);
+    const resultString = result.toLocaleString(undefined, { maximumFractionDigits: 10 });
+
+    if (resultString.length > 40) {
+      alert(`계산 결과가 너무 큽니다!\n${resultString}`);
+    } else {
+      displayText.textContent = resultString;
+      updateFontSize(resultString);
+    }
+  } catch (error) {
+    alert('잘못된 수식 입니다!');
+  }
+}
