@@ -1,0 +1,26 @@
+@import url("./commons.css");
+
+#calculator-section.dark {
+  background-color: #000000;
+}
+
+#display.dark {
+  background-color: #303030;
+  color: white;
+}
+
+#buttons {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  gap: 1rem;
+}
+
+button.dark {
+  background-color: #303030;
+  color: white;
+  width: 9.5rem;
+  height: 9.5rem;
+  font-size: 5rem;
+  border: none;
+  cursor: pointer;
+}

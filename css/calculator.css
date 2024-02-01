@@ -1,6 +1,8 @@
 @import url("./commons.css");
+@import url("./calculator_darkmode.css");
 
 body {
+  font-family: "SejonghospitalBold";
   padding-top: 5rem;
   display: flex;
   justify-content: center;
