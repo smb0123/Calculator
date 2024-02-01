@@ -19,9 +19,13 @@ const display = document.querySelector('.text');
 const buttonWrapper = document.querySelector('.button');
 
 function calculate() {
-  const expression = display.textContent;
-  const result = new Function('return ' + expression)();
-  console.log(result);
+  try {
+    const expression = display.textContent;
+    const result = new Function('return ' + expression)();
+    display.textContent = result;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function processKey(key) {
@@ -52,7 +56,7 @@ function clearDisplay() {
   display.textContent = '';
 }
 
-function handleKeyup(e) {
+function handleKeydown(e) {
   const scope = e.currentTarget ? e.currentTarget : document;
   const key = e.key?.toLowerCase();
 
@@ -79,5 +83,5 @@ function handleClick(e) {
   processKey(key);
 }
 
-document.addEventListener('keyup', handleKeyup);
+document.addEventListener('keydown', handleKeydown);
 buttonWrapper.addEventListener('click', handleClick);
