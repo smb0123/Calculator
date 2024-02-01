@@ -19,6 +19,7 @@ export const keyObj = {
   '+': '+',
   '-': '-',
   enter: 'enter',
+  '=': 'enter',
   escape: 'escape',
   backspace: 'backspace',
 };

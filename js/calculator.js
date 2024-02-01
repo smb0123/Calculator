@@ -25,7 +25,7 @@ function calculate() {
 function processKey(key) {
   if (!keyObj.hasOwnProperty(key)) return;
 
-  switch (key) {
+  switch (keyObj[key]) {
     case keyObj.backspace:
       backSpaceDisplay();
       break;
