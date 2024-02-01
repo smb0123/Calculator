@@ -22,6 +22,7 @@ export const KEY_OBJ = {
   '=': 'enter',
   escape: 'escape',
   backspace: 'backspace',
+  l: 'mode',
 };
 
 export const DARK_MODE_TYPE = {

@@ -32,6 +32,9 @@ function processKey(key) {
     case KEY_OBJ.enter:
       calculate();
       break;
+    case KEY_OBJ.l:
+      toggleMode();
+      break;
     default:
       display.textContent += KEY_OBJ[key];
       break;
@@ -50,8 +53,14 @@ function clearDisplay() {
 function handleKeydown(e) {
   const scope = e.currentTarget ? e.currentTarget : document;
   const key = e.key?.toLowerCase();
+  const ctrlKey = e.ctrlKey;
+  const shiftKey = e.shiftKey;
 
-  if (!KEY_OBJ.hasOwnProperty(key)) return;
+  if (
+    !KEY_OBJ.hasOwnProperty(key) ||
+    (KEY_OBJ[key] === KEY_OBJ.l && !(ctrlKey && shiftKey))
+  )
+    return;
 
   const element = scope.querySelector(`button[data-key="${KEY_OBJ[key]}"]`);
 
