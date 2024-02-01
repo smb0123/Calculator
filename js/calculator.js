@@ -1,4 +1,4 @@
-import { keyCodes, shiftKeyCodes } from './constants.js';
+import { keyObj } from './constants.js';
 
 const btn = document.querySelector('.button').children;
 
@@ -18,35 +18,64 @@ for (let i of btn) {
 const display = document.querySelector('.text');
 const buttonWrapper = document.querySelector('.button');
 
-display.textContent = '';
-
-function handleKeyup(e) {
-  console.log(e.key, ' ', e.keyCode);
-
-  const key = e.key;
-  const keyCode = e.keyCode;
-  const shiftKey = e.shiftKey;
-
-  if (
-    (shiftKey && !shiftKeyCodes.includes(keyCode)) ||
-    (!shiftKey && !keyCodes.includes(keyCode))
-  ) {
-    return;
-  }
-
-  if (keyCode === 13) {
-    console.log('TODO: 계산');
-    return;
-  } else if (keyCode === 27) {
-    console.log('TODO: 클리어');
-    display.textContent = '';
-    return;
-  }
-
-  display.textContent += key;
+function calculate() {
+  console.log('TODO: calculate');
 }
 
-function calculate(e) {}
+function processKey(key) {
+  if (!keyObj.hasOwnProperty(key)) return;
+
+  switch (key) {
+    case keyObj.backspace:
+      backSpaceDisplay();
+      break;
+    case keyObj.escape:
+      clearDisplay();
+      break;
+    case keyObj.enter:
+      calculate();
+      break;
+    default:
+      display.textContent += keyObj[key];
+      break;
+  }
+}
+
+function backSpaceDisplay() {
+  const textLength = display.textContent.length;
+  display.textContent = display.textContent.slice(0, textLength - 1);
+}
+
+function clearDisplay() {
+  display.textContent = '';
+}
+
+function handleKeyup(e) {
+  const scope = e.currentTarget ? e.currentTarget : document;
+  const key = e.key?.toLowerCase();
+
+  if (!keyObj.hasOwnProperty(key)) return;
+
+  const element = scope.querySelector(`button[data-key="${keyObj[key]}"]`);
+
+  if (element) {
+    element.style.backgroundColor = 'gray';
+    setTimeout(() => {
+      element.style.backgroundColor = 'white';
+    }, 100);
+  }
+
+  processKey(key);
+}
+
+function handleClick(e) {
+  const target = e.target;
+  const key = target.dataset.key?.toLowerCase();
+
+  if (!keyObj.hasOwnProperty(key)) return;
+
+  processKey(key);
+}
 
 document.addEventListener('keyup', handleKeyup);
-buttonWrapper.addEventListener('click', calculate);
+buttonWrapper.addEventListener('click', handleClick);
