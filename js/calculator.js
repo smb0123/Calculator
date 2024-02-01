@@ -19,7 +19,9 @@ const display = document.querySelector('.text');
 const buttonWrapper = document.querySelector('.button');
 
 function calculate() {
-  console.log('TODO: calculate');
+  const expression = display.textContent;
+  const result = new Function('return ' + expression)();
+  console.log(result);
 }
 
 function processKey(key) {
