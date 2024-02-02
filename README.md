@@ -1,1 +1,1 @@
-calculator
+calculator for Vanilla JS
