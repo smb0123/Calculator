@@ -2,11 +2,11 @@ const btn = document.querySelector('.button').children;
 const displayText = document.querySelector('#displayText');
 
 const changeColor = function (e) {
-  e.target.style.backgroundColor = 'gray';
+  e.target.classList.add("active");
 };
 
 const originColor = function (e) {
-  e.target.style.backgroundColor = 'white';
+  e.target.classList.remove("active");
 };
 
 for (const button of btn) {
@@ -90,7 +90,7 @@ document.addEventListener('keydown', function (e) {
 
 function evaluateExpression(expression) {
   const sanitizedExpression = sanitizeExpression(expression);
-  return Function(`'use strict'; return (${sanitizedExpression})`)();
+  return Function(`return (${sanitizedExpression})`)();
 }
 
 function sanitizeExpression(expression) {
@@ -109,4 +109,15 @@ function updateWithPercent() {
     updateFontSize(newText);
     calculateResult();
   }
+}
+
+document.addEventListener('keydown', function (event) {
+  if ((event.metaKey || event.ctrlKey) && event.shiftKey && event.key === '1') {
+    toggleDarkMode();
+  }
+});
+
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
 }

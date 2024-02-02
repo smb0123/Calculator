@@ -47,4 +47,9 @@ main {
   height: 5.9375rem;
   font-size: 3.125rem;
   cursor: pointer;
+  background-color: white;
+}
+
+.button button.active {
+  background-color: gray;
 }
