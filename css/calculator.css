@@ -24,7 +24,6 @@ main {
   display: flex;
   justify-content: end;
   align-items: center;
-  background-color: #FFF;
   width: 25.625rem;
   height: 6.25rem;
   font-size: 3.125rem;
@@ -37,7 +36,6 @@ main {
 }
 
 .button button {
-  background-color: #FFF;
   width: 5.9375rem;
   height: 5.9375rem;
   font-size: 3.125rem;
@@ -60,10 +58,24 @@ main {
   cursor: pointer;
 }
 
-.mode button:nth-child(1) {
+.black {
   background-color: black;
 }
 
-.mode button:nth-child(2) {
+.white {
   background-color: white;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.change-black {
+  background-color: black;
+  color: white;
+}
+
+.change-white {
+  background-color: white;
+  color: black;
 }
