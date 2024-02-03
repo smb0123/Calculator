@@ -5,35 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="./css/calculator.css" rel="stylesheet">
+  <link href="./css/dark.css" rel="stylesheet">
 </head>
 <body>
+  <div class="dark-mode-toggle">
+    <img src="/asset/sun.png" alt="Dark Mode Toggle" id="darkModeToggle">
+  </div>
   <main>
+    </div>
     <div class="text">
-      111
+      <p id="displayText"></p>
     </div>
     <div class="button">
-      <button class="left-bracket">(</button>
-      <button class="right-bracket">)</button>
-      <button class="remain">%</button>
-      <button class="reset">AC</button>
-      <button class="seven">7</button>
-      <button class="eight">8</button>
-      <button class="nine">9</button>
-      <button class="divide">/</button>
-      <button class="four">4</button>
-      <button class="five">5</button>
-      <button class="six">6</button>
-      <button class="multiply">x</button>
-      <button class="one">1</button>
-      <button class="two">2</button>
-      <button class="three">3</button>
-      <button class="subtract">-</button>
-      <button class="one">0</button>
-      <button class="point">.</button>
-      <button class="equal">=</button>
-      <button class="plus">+</button>
+      <button class="left-bracket" data-text="(">(</button>
+      <button class="right-bracket" data-text=")">)</button>
+      <button class="remain" data-text="%">%</button>
+      <button class="reset" data-text>AC</button>
+      <button class="seven" data-text="7">7</button>
+      <button class="eight" data-text="8">8</button>
+      <button class="nine" data-text="9">9</button>
+      <button class="divide" data-text="/">/</button>
+      <button class="four" data-text="4">4</button>
+      <button class="five" data-text="5">5</button>
+      <button class="six" data-text="6">6</button>
+      <button class="multiply" data-text="x">x</button>
+      <button class="one" data-text="1">1</button>
+      <button class="two" data-text="2">2</button>
+      <button class="three" data-text="3">3</button>
+      <button class="subtract" data-text="-">-</button>
+      <button class="zero" data-text="0">0</button>
+      <button class="point" data-text=".">.</button>
+      <button class="equal" data-text>=</button>
+      <button class="plus" data-text>+</button>
     </div>
   </main>
   <script src="./js/calculator.js"></script>
+  <script src="./js/dark.js"></script>
 </body>
 </html>

@@ -21,12 +21,18 @@ main {
 
 .text {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   background-color: #FFF;
   width: 25.625rem;
   height: 6.25rem;
+  overflow: hidden;
+}
+
+#displayText {
   font-size: 3.125rem;
+  white-space: nowrap;
+  margin: 0; /* p 태그의 기본 마진 제거 */
 }
 
 .button {
@@ -41,4 +47,9 @@ main {
   height: 5.9375rem;
   font-size: 3.125rem;
   cursor: pointer;
+  background-color: white;
+}
+
+.button button.active {
+  background-color: gray;
 }
